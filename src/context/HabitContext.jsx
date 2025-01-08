@@ -11,11 +11,12 @@ const reducer = (habits, action) => {
       const newHabit = {
         value: action.value,
         id: uuidv4(),
-        status: "pending",
       };
       const newHabits = [...habits, newHabit];
+
       return newHabits;
     case "delete":
+      return habits.filter((habit) => habit.id !== action.payload);
     case "update":
     default:
       throw new Error("invalid type");

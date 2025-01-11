@@ -8,9 +8,11 @@ const reducer = (habits, action) => {
   // debugger;
   switch (action.type) {
     case "create":
+      debugger;
       const newHabit = {
         value: action.value,
         id: uuidv4(),
+        date: action.date,
       };
       const newHabits = [...habits, newHabit];
 
